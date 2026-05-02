@@ -4,8 +4,8 @@
 
 **A zero-config logistics & retail analytics dashboard** — upload any CSV and instantly get **16 interactive charts**, KPI cards, geospatial maps, correlation matrices, and export tools.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://retailops-intelligence-fa8vgeqm4jpqltppwifakb.streamlit.app/)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 </div>
@@ -30,12 +30,18 @@
 
 ---
 
+## 🚀 Live Demo
+
+👉 **[retailops-intelligence-fa8vgeqm4jpqltppwifakb.streamlit.app](https://retailops-intelligence-fa8vgeqm4jpqltppwifakb.streamlit.app/)**
+
+---
+
 ## 🚀 Deploy on Streamlit Community Cloud (Free)
 
 1. **Fork or clone** this repo
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/retailops-intelligence.git
+   git clone https://github.com/Arshitraj-123/retailops-intelligence.git
    cd retailops-intelligence
    ```
 
@@ -53,9 +59,6 @@
    - Select your repo → branch `main` → main file `app.py`
    - Click **Deploy** 🎉
 
-> Your live link will look like:
-> `https://YOUR_USERNAME-retailops-intelligence.streamlit.app`
-
 ---
 
 ## 🛠️ Run Locally
@@ -64,7 +67,7 @@
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/retailops-intelligence.git
+git clone https://github.com/Arshitraj-123/retailops-intelligence.git
 cd retailops-intelligence
 
 # 2. Create a virtual environment (recommended)
@@ -88,7 +91,8 @@ Then open your browser at **http://localhost:8501**
 retailops-intelligence/
 │
 ├── app.py                  # Main Streamlit application
-├── requirements.txt        # Python dependencies (pinned versions)
+├── requirements.txt        # Python dependencies
+├── .python-version         # Forces Python 3.11 on Streamlit Cloud
 └── README.md               # You are here
 ```
 
