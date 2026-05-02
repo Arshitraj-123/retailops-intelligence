@@ -369,11 +369,25 @@ with st.sidebar:
             df = df[df[cat_col].isin(sel_cats)]
 
     if date_col != "None":
-        min_d = df[date_col].min().date()
-        max_d = df[date_col].max().date()
-        date_range = st.date_input("Date Range", value=(min_d, max_d), min_value=min_d, max_value=max_d)
-        if len(date_range) == 2:
-            df = df[(df[date_col].dt.date >= date_range[0]) & (df[date_col].dt.date <= date_range[1])]
+        try:
+            min_d = df[date_col].dropna().min().date()
+            max_d = df[date_col].dropna().max().date()
+            if min_d and max_d:
+                date_range = st.date_input(
+                    "Date Range",
+                    value=(min_d, max_d),
+                    min_value=min_d,
+                    max_value=max_d
+                )
+                if len(date_range) == 2:
+                    df = df[
+                        (df[date_col].dt.date >= date_range[0]) &
+                        (df[date_col].dt.date <= date_range[1])
+                    ]
+            else:
+                st.warning("⚠️ No valid dates found in selected column.")
+        except Exception as e:
+            st.warning(f"⚠️ Could not parse date range: {e}")
 
     st.markdown('<div class="sb-section">📥 Export</div>', unsafe_allow_html=True)
     st.download_button(
